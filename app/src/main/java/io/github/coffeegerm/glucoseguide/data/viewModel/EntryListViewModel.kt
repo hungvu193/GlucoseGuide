@@ -16,26 +16,27 @@
 
 package io.github.coffeegerm.glucoseguide.data.viewModel
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import io.github.coffeegerm.glucoseguide.data.LiveRealmResults
 import io.github.coffeegerm.glucoseguide.data.model.Entry
 import io.realm.Realm
 import io.realm.Sort
 
 class EntryListViewModel : ViewModel() {
-  
-  private var realm: Realm = Realm.getDefaultInstance()
-  private var entries: LiveData<List<Entry>>
-  
-  init {
-    entries = LiveRealmResults<Entry>(realm.where(Entry::class.java).sort("date", Sort.DESCENDING).findAllAsync())
-  }
-  
-  fun getEntries(): LiveData<List<Entry>> = entries
-  
-  override fun onCleared() {
-    realm.close()
-    super.onCleared()
-  }
+
+    private var realm: Realm = Realm.getDefaultInstance()
+    private var entries: LiveData<List<Entry>>
+
+    init {
+// TODO:    sort by date, today...
+        entries = LiveRealmResults<Entry>(realm.where(Entry::class.java).sort("date", Sort.DESCENDING).findAllAsync())
+    }
+
+    fun getEntries(): LiveData<List<Entry>> = entries
+
+    override fun onCleared() {
+        realm.close()
+        super.onCleared()
+    }
 }

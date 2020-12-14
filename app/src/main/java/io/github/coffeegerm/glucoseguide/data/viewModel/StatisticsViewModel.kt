@@ -16,7 +16,7 @@
 
 package io.github.coffeegerm.glucoseguide.data.viewModel
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import io.github.coffeegerm.glucoseguide.data.DatabaseManager
 import io.github.coffeegerm.glucoseguide.utils.DateAssistant
 import java.util.*

@@ -16,7 +16,7 @@
 
 package io.github.coffeegerm.glucoseguide.data
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import io.realm.OrderedRealmCollectionChangeListener
 import io.realm.RealmModel
 import io.realm.RealmResults

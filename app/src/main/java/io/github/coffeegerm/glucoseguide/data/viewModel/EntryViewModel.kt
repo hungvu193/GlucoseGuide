@@ -16,8 +16,8 @@
 
 package io.github.coffeegerm.glucoseguide.data.viewModel
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import io.github.coffeegerm.glucoseguide.data.LiveRealmObject
 import io.github.coffeegerm.glucoseguide.data.model.Entry
 import io.realm.Realm

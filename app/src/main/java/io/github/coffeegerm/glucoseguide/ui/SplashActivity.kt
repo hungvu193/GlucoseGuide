@@ -18,7 +18,7 @@ package io.github.coffeegerm.glucoseguide.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  * Created by dyarz on 8/15/2017.

@@ -16,17 +16,22 @@
 
 package io.github.coffeegerm.glucoseguide.ui
 
+import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.github.coffeegerm.glucoseguide.GlucoseGuide.Companion.syringe
 import io.github.coffeegerm.glucoseguide.R
+import io.github.coffeegerm.glucoseguide.ui.entry.NewEntryActivity
 import io.github.coffeegerm.glucoseguide.utils.Constants
 import io.github.coffeegerm.glucoseguide.utils.SharedPreferencesManager
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.sdk25.coroutines.onClick
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
-  
+
+
   @Inject
   lateinit var sharedPreferencesManager: SharedPreferencesManager
   
@@ -35,6 +40,15 @@ class MainActivity : AppCompatActivity() {
     syringe.inject(this)
     if (sharedPreferencesManager.getBoolean(Constants.PREF_DARK_MODE)) setTheme(R.style.AppTheme_Dark)
     setContentView(R.layout.activity_main)
+    val fabButton: FloatingActionButton = findViewById(R.id.abCodeFloatingActionButton)
+    findViewById<FloatingActionButton>(R.id.abCodeFloatingActionButton).setOnClickListener {
+      startActivity(Intent(this, NewEntryActivity::class.java))
+    }
+    if (sharedPreferencesManager.getBoolean(Constants.PREF_DARK_MODE)) {
+//      fabButton.setBackground
+    } else {
+
+    }
     bottom_navigation.setOnNavigationItemSelectedListener(NavigationOnItemSelectedListener(supportFragmentManager,this))
   }
 }

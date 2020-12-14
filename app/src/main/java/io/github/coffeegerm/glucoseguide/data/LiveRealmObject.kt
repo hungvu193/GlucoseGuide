@@ -16,8 +16,8 @@
 
 package io.github.coffeegerm.glucoseguide.data
 
-import android.arch.lifecycle.LiveData
-import android.support.annotation.MainThread
+import androidx.lifecycle.LiveData
+import androidx.annotation.MainThread
 import io.realm.RealmModel
 import io.realm.RealmObject
 import io.realm.RealmObjectChangeListener
